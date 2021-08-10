@@ -1,18 +1,46 @@
-/* Error: Undefined variable.
- *   ,
- * 6 |     $xs: 4px,
- *   |     ^^^
- *   '
- *   styles/utilities/_scale.scss 6:5  @use
- *   styles/styles.scss 1:1            root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a   \2577 \a 6 \2502      $xs: 4px,\a   \2502      ^^^\a   \2575 \a   styles/utilities/_scale.scss 6:5  @use\a   styles/styles.scss 1:1            root stylesheet";
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  line-height: 21px;
 }
+
+.form-group {
+  width: 200px;
+}
+
+.results {
+  border: 1px solid #ccc;
+  border-top: 0;
+  width: 100%;
+  padding: 5px 0;
+  max-height: 200px;
+  overflow-y: scroll;
+  background: hotpink;
+}
+
+.result {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.result:hover {
+  background-color: #eee;
+}
+
+form {
+  display: flex;
+}
+
+.form-group + .form-group {
+  margin-left: 50px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+/*# sourceMappingURL=main.css.map */
