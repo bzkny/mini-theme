@@ -33,7 +33,9 @@ Navigate using UP & DOWN & ENTER TO SELECT
 Next I would move to execution
 4. Set up my environment
 5. Install sass, spec out css files, script watcher, install google font
-6. 
+6. style and create theme
+7. http endpoint
+8. add mouse and keyboard events 
 
 //TODO
 Palette stylesheet
