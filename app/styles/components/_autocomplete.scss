@@ -4,11 +4,9 @@
 
 
 .form-group {
+  display: inline-block;
   width: 240px;
-  
-  + .form-group {
-    margin-left: 50px;
-  }
+  vertical-align: top;
 }
 label {
   max-width: 240px;
