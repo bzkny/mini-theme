@@ -1,0 +1,21 @@
+@use "sass:color";
+@use "../variables";
+
+// $color-primary: variables.$theme;
+$theme: null;
+$theme-text: null;
+
+@if variables.$theme == dark {
+    $theme: #28283b;
+    // $theme-text: color.adjust($theme, $whiteness: 100%);    
+    $theme-text: color.adjust($theme, $lightness: 70%);
+} @else {
+    $theme: #fefefe;
+    // $theme-text: color.adjust($theme, $blackness: 100%);   
+    $theme-text: color.adjust($theme, $lightness: -70%);
+}
+
+body {
+    background: $theme;
+    color: $theme-text;
+}

@@ -6,7 +6,8 @@
   "main": "./index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "compile": "sass styles/styles.scss main.css --watch"
   },
   "license": "UNLICENSED",
   "devDependencies": {

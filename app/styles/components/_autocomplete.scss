@@ -1,40 +1,48 @@
+@use "../variables";
 @use "../utilities/scale";
+@use "../utilities/palette";
 
 
 .form-group {
-    width: 200px;
-  }
+  width: 240px;
   
-  .results {
-    border: 1px solid #ccc;
-    border-top: 0;
-    width: 100%;
-    padding: 5px 0;
-    max-height: 200px;
-    overflow-y: scroll;
-    background: hotpink;
-  }
-  
-  .result {
-    padding: 5px;
-    cursor: pointer;
-  }
-  .result:hover {
-    background-color: #eee;
-  }
-  
-  form {
-    display: flex;
-  }
-  
-  .form-group + .form-group {
+  + .form-group {
     margin-left: 50px;
   }
-  
-  input {
-    display: block;
-    width: 100%;
-    padding: 5px;
-    border: 1px solid #ccc;
+}
+label {
+  max-width: 240px;
+  color: palette.$theme-text;
+}
+input[type=search] {
+  width: 100%;
+  padding: scale.$xs scale.$s;
+  border: 1px solid #ccc;
+  border-radius: scale.$xs;
+  color: palette.$theme-text;
+
+  &:focus-visible {
+    outline-offset: -100px;
+    border-color: variables.$accent;
   }
+}
+
+.results {
+  border: 1px solid variables.$accent;
+  border-radius: scale.$s;
+  width: 100%;
+  padding: scale.$xs 0;
+  max-height: 200px;
+  overflow-y: scroll;
+}
+  
+.result {
+  padding: scale.$xs scale.$s;
+  margin: scale.$s;
+  cursor: pointer;
+
+  &:hover, :focus {
+    background-color: variables.$accent;
+  }
+}
   
