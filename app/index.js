@@ -15,21 +15,16 @@ const data = usStates.map(state => ({
 const Url = "https://api.github.com/search/users?q=bz&per_page=10";
 fetch(Url)
 .then(res => res.json())
-// .then(data=>{console.log(data)})
 .then(res => {
   const gdata = res.items;
-  // console.log(gdata);
   let li = ' '
   gdata.forEach(function (item) {
     console.log(item);
     li += `<li> ${item.login} </li>`;
 
-
-    // let li = document.createElement('li');
     let resultsUl = document.querySelector('.gh-users-group ul');
-    // let constructedList = document.querySelector('.gh-users-group ul');
     resultsUl.innerHTML = li;
-    resultsUl.classList.remove('hide');
+    // resultsUl.classList.remove('hide');
   })
   //MOVE TO OWN FUNCTION
 })
