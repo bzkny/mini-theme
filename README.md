@@ -1,4 +1,5 @@
-1 npm i
+# mini-theme
+1 git init
 
 2 npm run start
 
