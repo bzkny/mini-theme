@@ -10,19 +10,33 @@ const data = usStates.map(state => ({
   text: state.name,
   value: state.abbreviation,
 }));
-console.log(data);
+// console.log(data);
 
 const Url = "https://api.github.com/search/users?q=bz&per_page=10";
 fetch(Url)
-.then(data => {return data.json()})
+.then(res => res.json())
 // .then(data=>{console.log(data)})
 .then(res => {
-  console.log(res);
-  const data = res.items;
+  const gdata = res.items;
+  // console.log(gdata);
+  let li = ' '
+  gdata.forEach(function (item) {
+    console.log(item);
+    li += `<li> ${item.login} </li>`;
 
-  console.log(data);
-  return data;
+
+    // let li = document.createElement('li');
+    let resultsUl = document.querySelector('.gh-users-group ul');
+    // let constructedList = document.querySelector('.gh-users-group ul');
+    resultsUl.innerHTML = li;
+    resultsUl.classList.remove('hide');
+  })
+  //MOVE TO OWN FUNCTION
 })
+// .catch((error) => {
+//   console.log(`Error Fetching data : ${error}`)
+//   document.getElementById('gh-user').innerHTML = 'Error Loading Github Users'
+// })
 
 new Autocomplete(document.getElementById('state'), {
   data,
@@ -33,8 +47,14 @@ new Autocomplete(document.getElementById('state'), {
 
 
 // Github Users
-new Autocomplete(document.getElementById('gh-user'), {
-  onSelect: (ghUserId) => {
-    console.log('selected github user id:', ghUserId);
-  },
-});
+// domStuff() {
+    // let gdata = this.gdata;
+  // gdata.forEach(function (item) {
+  //   // display data here
+  //   let ul = document.querySelector('results');
+  //   let li = document.createElement('li');
+  //   console.log(ul);
+  //   ul.appendChild(li);
+
+  // })
+// };

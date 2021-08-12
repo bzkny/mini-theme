@@ -59,7 +59,7 @@ input[type=search]:focus-visible {
 }
 
 .hide {
-  display: none;
+  visibility: hidden;
 }
 
 .result {
