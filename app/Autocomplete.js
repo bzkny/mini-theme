@@ -6,6 +6,7 @@ export default class Autocomplete {
       data: [],
       ...options,
     };
+
     this.init();
   }
 
@@ -25,6 +26,7 @@ export default class Autocomplete {
     // Get data for the dropdown
     let results = this.getResults(query, this.options.data);
     results = results.slice(0, this.options.numOfResults);
+
     this.updateDropdown(results);
   }
 
@@ -69,7 +71,8 @@ export default class Autocomplete {
     this.rootEl.appendChild(this.inputEl)
 
     // Build results dropdown
-    this.listEl = document.createElement('ul');
+    this.listEl = document.createElement('ul');    
+    this.listEl.classList.remove('hide');
     this.listEl.classList.add('results');
     this.rootEl.appendChild(this.listEl);
   }

@@ -58,6 +58,10 @@ input[type=search]:focus-visible {
   overflow-y: scroll;
 }
 
+.hide {
+  display: none;
+}
+
 .result {
   padding: 4px 8px;
   margin: 8px;
