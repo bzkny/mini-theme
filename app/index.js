@@ -12,15 +12,22 @@ const data = usStates.map(state => ({
 }));
 // console.log(data);
 
-const Url = "https://api.github.com/search/users?q=bz&per_page=10";
+let query = 'bz';
+let num = 10;
+const Url = `https://api.github.com/search/users?q=${query}+&per_page=${num}`;
+
+
+let per_page = 10;
+console.log(Url);
 fetch(Url)
 .then(res => res.json())
 .then(res => {
+  console.log
   const gdata = res.items;
   let li = ' '
   gdata.forEach(function (item) {
     console.log(item);
-    li += `<li> ${item.login} </li>`;
+    li += `<li tabindex="0"> ${item.login} </li>`;
 
     let resultsUl = document.querySelector('.gh-users-group ul');
     resultsUl.innerHTML = li;
@@ -28,10 +35,10 @@ fetch(Url)
   })
   //MOVE TO OWN FUNCTION
 })
-// .catch((error) => {
-//   console.log(`Error Fetching data : ${error}`)
-//   document.getElementById('gh-user').innerHTML = 'Error Loading Github Users'
-// })
+.catch((error) => {
+  console.log(`Error Fetching data : ${error}`)
+  document.getElementById('gh-user').innerHTML = 'Error Loading Github Users'
+})
 
 new Autocomplete(document.getElementById('state'), {
   data,

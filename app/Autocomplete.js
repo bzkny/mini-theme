@@ -72,7 +72,7 @@ export default class Autocomplete {
 
     // Build results dropdown
     this.listEl = document.createElement('ul');    
-    this.listEl.classList.remove('hide');
+    this.listEl.classList.remove('results');
     this.listEl.classList.add('results');
     this.rootEl.appendChild(this.listEl);
   }
