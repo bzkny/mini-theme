@@ -27,7 +27,7 @@ fetch(Url)
   let li = ' '
   gdata.forEach(function (item) {
     console.log(item);
-    li += `<li tabindex="0"> ${item.login} </li>`;
+    li += `<li class="result" tabindex="0"> ${item.login} </li>`;
 
     let resultsUl = document.querySelector('.gh-users-group ul');
     resultsUl.innerHTML = li;
